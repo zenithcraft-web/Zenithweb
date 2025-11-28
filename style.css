@@ -1,0 +1,256 @@
+/* Import Font dari Google Fonts untuk tampilan yang lebih profesional */
+@import url('https://fonts.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ----- General Styling ----- */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* BACKGROUND UTAMA: BIRU CERAH KE ORANYE! */
+    background: linear-gradient(to bottom right, #007bff, #ff8c00); 
+    color: #f8f9fa; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ----- Header Styling ----- */
+header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 60px 20px;
+    /* Border Biru Cerah */
+    border-bottom: 3px solid #1e90ff; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3.5em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ----- Main Content Styling & Efek Kaca Buram ----- */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+}
+
+.server-info h2, .links h2, .history-info h2, .rules-list h2 {
+    /* Warna aksen Kuning/Emas */
+    color: rgb(255, 215, 0); 
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* ----- Style Asal Usul Server ----- */
+.history-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ----- Style Rules List ----- */
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.clean-list li {
+    background: rgba(0, 0, 0, 0.15);
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    /* Border Kiri Biru */
+    border-left: 5px solid #1e90ff; 
+    transition: background 0.3s ease;
+}
+
+.clean-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.rule-title {
+    font-weight: 600;
+    color: rgb(255, 215, 0); /* Kuning tetap bagus untuk judul rules */
+}
+
+.warning-note {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #ff8c00; /* Oranye untuk Warning */
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* ----- Server Info Styling ----- */
+.info-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 20px auto;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.info-box p {
+    text-align: left;
+}
+
+.info-box strong {
+    color: rgb(255, 215, 0);
+    font-weight: 600;
+}
+
+#ip-address {
+    cursor: pointer;
+    text-decoration: underline dotted;
+    transition: color 0.3s ease;
+}
+
+#ip-address:hover {
+    color: #1e90ff; /* Hover Biru */
+}
+
+.join-note {
+    text-align: center;
+}
+
+/* ----- Link Buttons Styling ----- */
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    /* Tambahkan efek GLOWING PUTIH KEBIRUAN default */
+    box-shadow: 0 0 10px rgba(135, 206, 250, 0.3);
+}
+
+.button::before {
+    /* Efek Cahaya Hover */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    /* Ganti jadi biru keputihan */
+    background: rgba(135, 206, 250, 0.25); 
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.button:hover::before {
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+}
+
+.button:hover {
+    /* Tambahkan glow yang lebih kuat saat hover */
+    box-shadow: 0 0 25px rgba(135, 206, 250, 0.8), 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.button span {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Warna Spesifik Tombol (Hanya ganti shadow untuk glowing) */
+.donate-btn {
+    background: linear-gradient(135deg, rgb(255, 120, 0), rgb(255, 180, 50)); 
+}
+/* Tombol lainnya tetap menggunakan warna aslinya, hanya shadow yang berubah menjadi glowing biru */
+
+.store-btn {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.discord-btn {
+    background: linear-gradient(135deg, #7289DA, #5b6fb3);
+}
+
+.tiktok-btn {
+    background: linear-gradient(135deg, #000000, #EE1D52); 
+    border: 1px solid #69C9D0;
+}
+
+
+/* ----- Footer Styling ----- */
+footer {
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    margin-top: 50px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* ----- Responsive Design ----- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    main {
+        padding: 20px;
+    }
+    .button-container {
+        grid-template-columns: 1fr;
+    }
+    section {
+        padding: 25px 20px;
+    }
+}
